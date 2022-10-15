@@ -16,7 +16,7 @@ fn main() -> ! {
 
     let mut timer = Timer::new(board.TIMER0);
 
-    board.display_pins.coli.set_low().unwrap();
+    board.display_pins.col1.set_low().unwrap();
     let mut row1 = board.display_pins.row1;
 
     loop {
