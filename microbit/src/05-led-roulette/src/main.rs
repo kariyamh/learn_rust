@@ -26,13 +26,15 @@ fn main() -> ! {
         [0, 0, 0, 0, 0],
     ];
 
-    let i = 0;
+    let mut i = 0;
     loop {
         let (x, y) = get_index_of_lit_led(i);
         led_matrix[x][y] = 1; 
         display.show(&mut timer, led_matrix, 500);
+        led_matrix[x][y] = 0;
         display.clear();
-        timer.delay_ms(500_u32);
+        timer.delay_ms(100_u32);
+        i = (i + 1) % 16;
     }
 }
 
